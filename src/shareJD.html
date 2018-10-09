@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../../../source/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../source/css/style.min.css"/>
+		<script src="../../../source/js/fastclick.js"></script>
+		<script src="../../../source/js/flexible.js"></script>
+		<script src="../../../source/js/jquery-1.11.3.min.js"></script>
+		<title>教师秘书送福利啦</title>
+	</head>
+	<body>
+		<div class="z_content">
+			<div class="share_banenr">
+				<h1><span></span>邀请您一起领取30元京东卡</h1>
+				<img src="../../../source/images/activity/share.png"/>
+			</div>
+			<div class="share_logo">
+				<img src="../../../source/images/activity/logo.png"/>
+				<h1>助力教师教学进步，【教师秘书】送福利！</h1>
+			</div>
+			<div class="active_state">
+				<p>即日起至10月31日，老师邀请家长加入班级，前1000个累计邀请满30人的班级，创建该班级的老师可领取30元京东卡奖励，每天最先领奖的前5名老师，还可额外获赠惊喜小礼包！</p>
+			</div>
+			<a class="share_ling">领取奖励</a>
+		</div>
+		<script>
+			//获取url传递过来的参数
+		function GetUrlParms() {
+		 var args=new Object();
+		 var query=window.location.search.substring(1);//获取查询串 
+		 //var query='name=张松涛';//获取查询串 
+		 var pairs=query.split("&"); 
+		 for(var i=0;i<pairs.length;i++) { 
+		  var pos=pairs[i].indexOf('='); 
+		   if(pos==-1) continue; 
+		   var argname=pairs[i].substring(0,pos);
+		   var value=pairs[i].substring(pos+1);
+		   args[argname]=decodeURI(value);
+		 };
+		 return args;
+		};
+		//定义一个变量用来接收参数
+		var xx=GetUrlParms();
+		var str='<span>'+xx.name+'</span>邀请您一起领取30元京东卡';
+		$(".share_banenr h1").html(str);
+		$(function(){
+			$(".share_ling").click(function(){
+				var ua = navigator.userAgent;				
+				// 根据浏览器判断是苹果设备还是安卓设备
+				var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android终端
+    			var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端            
+		        if (isAndroid) {  
+                	window.location.href = 'openteacherbate://open';
+                	window.setTimeout(function(){
+			           window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.open.teachermanager";
+			        },2000);
+			                  
+	            }else{		                	               	
+					window.location.href = 'openteacherbate://open';
+			        window.setTimeout(function(){
+			           window.location.href = "https://itunes.apple.com/cn/app/教师秘书-老师专属的随行小秘书/id1136972366?mt=8";
+			        },2000); 					
+	            };   
+			})				
+		})
+			
+		</script>
+	</body>
+</html>

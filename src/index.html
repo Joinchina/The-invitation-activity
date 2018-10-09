@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>邀请家长送福利！</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.min.css"/>
+		<script src="js/fastclick.js"></script>
+		<script src="js/flexible.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/style.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1274865853'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274865853' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<div class="z_content">
+			<div class="active_ban">
+				<a href="active_rule.html" class="guize">活动规则</a>
+				<span id="activity_info">
+				</span>				
+			</div>
+			<div class="active_award">
+				<div class="award_title">
+					<h1>领取人数：2/<span>1000</span></h1>
+					<div class="line"></div>
+				</div>
+				<div class="award_scroll">
+					<span id="scroll_list_1">
+						<ul>
+							<li>
+								<img src="../../../source/images/activity/icon/moren.png"/>
+								<h1> 赵**</h1>
+								<h2>老师</h2>
+								<h3>领取30元京东券</h3>
+							</li>
+							<li>
+								<img src="../../../source/images/activity/icon/02.png"/>
+								<h1> 宋**</h1>
+								<h2>老师</h2>
+								<h3>领取30元京东券</h3>
+							</li>							
+						</ul>
+					</span>					
+					<span id="scroll_list_2">						
+					</span>
+				</div>
+			</div>
+			<div class="active_state">
+				<h1>活动说明</h1>
+				<p>助力教师教学进步，【教师秘书】送福利！
+					即日起至10月31日，老师邀请家长加入班级，前1000个累计邀请满30人的班级，
+					创建该班级的老师可领取30元京东卡奖励，每天最先领奖的前5名老师，还可额外获赠惊喜小礼包！</p>
+			</div>
+			<div class="copyright">
+				本活动最终解释权归教师秘书所有
+			</div>
+			<div class="invitation" onclick="clickinvi()">
+				<span>邀请家长</span>
+			</div>	
+			<button id="dianjiling">点击领取</button>
+		</div>
+		<!--领取奖励的弹窗-->
+		<div class="jl">
+			<div class="jl_box">
+				<div class="close"></div>
+				<img src="images/threey.png"/>
+				<h1>领取成功，您可在京东使用</h1>
+				<h2>我是卷卷卷啊</h2>
+				<button>知道了</button>
+			</div>
+		</div>
+		<!--异常弹窗-->
+		<div class="duifixed">
+			<div class="dui_box">
+				<p style="margin-top: 0.8rem;">异常提示</p>
+				<button class="mie">确定</button>
+			</div>			
+		</div>
+		<script>
+		// 点击了邀请家长的按钮	
+		function clickinvi(){
+			// 根据浏览器判断是苹果设备还是安卓设备
+			var ua = navigator.userAgent;
+			var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android终端
+	    	var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	    	if(isAndroid){    		
+	    		androidInvitation();
+	    	}else{
+	    		window.webkit.messageHandlers.clickinvi.postMessage({});
+	    		
+	    	}
+						
+		};
+		function androidInvitation(){
+	        android.invitation("js调用了android中的hello方法");
+	    };
+        //统计代码
+        $(function(){
+        	var _czc = _czc || [];
+			//领劵接口点击活动规则统计
+			$(".guize").click(function(){
+				_czc.push(﻿["_trackEvent","活动规则","查看活动规则"]);
+			})
+        })				
+		</script>
+	</body>
+</html>
